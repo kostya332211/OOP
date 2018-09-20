@@ -8,6 +8,18 @@ namespace LAB_02
 {
     class Program
     {
+        public static (int max, int min, int length_arr, char first_letter) func(int[] numbers, string str)
+        {
+            var result = (max: -1000, min: 1000, length_arr:0, first_letter:'A');
+           foreach (int x in numbers)
+            {
+                if (x > result.max) { result.max = x; }
+                if (x < result.min) { result.min = x; }
+            }
+            result.length_arr = numbers.Length;
+            result.first_letter = str[0];
+            return result;
+        }
         static void Main(string[] args)
         {
             var num = "ss";  //неявно типизированная переменная
@@ -105,12 +117,12 @@ namespace LAB_02
             }
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine("first strring, element " + i);
+                Console.WriteLine("second strring, element " + i);
                 mas_stup[1][i] = int.Parse(Console.ReadLine());
             }
             for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine("first strring, element " + i);
+                Console.WriteLine("third strring, element " + i);
                 mas_stup[2][i] = int.Parse(Console.ReadLine());
             }
 
@@ -138,9 +150,9 @@ namespace LAB_02
             ulong fifth_element_of_cortege = kort1.Item5;
             // if (kort1 == kort2) { } version 7.3 +
 
-            int[] last_mass = { 1, 7, 4, 2, 8 };
+            int[] last_mass = { 1, -7, 422, -2711, 128 };
             string last_string = "game over";
-            int sykasykasykasykasykasyka_blet = 2;
+            Console.WriteLine(func(last_mass,last_string));
 
         }
        
